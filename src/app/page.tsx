@@ -4,6 +4,7 @@ import ContactForm from '../components/ContactForm'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Droplets, Shield, Zap, ChevronRight, Waves, Filter, Leaf } from 'lucide-react'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function SuutkaLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
