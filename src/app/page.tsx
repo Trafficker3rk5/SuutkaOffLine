@@ -149,8 +149,7 @@ export default function SuutkaLanding() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-              Fusionamos sonoridad maya con diseño moderno para crear sistemas de filtración 
-              que combinan tecnología avanzada con raíces orgánicas.
+              Sistemas de filtración de tecnología avanzada.
             </motion.p>
 
             <motion.div 
@@ -218,7 +217,7 @@ export default function SuutkaLanding() {
             {[
               {
                 icon: <Droplets className="w-12 h-12" />,
-                title: "Filtración molecular",
+                title: "Filtración por Osmosis Inversa",
                 description: "Tecnología avanzada que elimina impurezas a nivel molecular",
                 color: "#00C4CF"
               },
@@ -308,7 +307,7 @@ export default function SuutkaLanding() {
               {[
                 { step: "01", title: "Captación", description: "Recolección inicial del agua", icon: <Waves /> },
                 { step: "02", title: "Pre-filtrado", description: "Eliminación de partículas grandes", icon: <Filter /> },
-                { step: "03", title: "Filtrado fino", description: "Proceso de purificación molecular", icon: <Droplets /> },
+                { step: "03", title: "Filtrado fino", description: "Proceso de purificación por osmosis inversa", icon: <Droplets /> },
                 { step: "04", title: "Entrega", description: "Agua pura lista para consumo", icon: <Leaf /> }
               ].map((process, index) => (
                 <motion.div
