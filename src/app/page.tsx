@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Droplets, Shield, Zap, ChevronRight, Waves, Filter, Leaf } from 'lucide-react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import ProductsCarousel from '@/components/ProductsCarousel'
+
 
 export default function SuutkaLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -157,24 +159,23 @@ export default function SuutkaLanding() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-            >
-              <motion.button
-                className="px-8 py-4 bg-[#003E73] text-white rounded-full font-semibold hover:bg-[#00C4CF] transition-all duration-300 flex items-center justify-center gap-2"
-                whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(0, 60, 115, 0.3)" }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Descubrir tecnología <ChevronRight className="w-5 h-5" />
-              </motion.button>
-              
-              <motion.button
-                className="px-8 py-4 border-2 border-[#00C4CF] text-[#00C4CF] rounded-full font-semibold hover:bg-[#00C4CF] hover:text-white transition-all duration-300"
-                whileHover={{ scale: 1.05, backgroundColor: "#00C4CF", color: "white" }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Ver proceso
-              </motion.button>
+            >            
             </motion.div>
           </motion.div>
+
+{/* ===== SECCIÓN PRODUCTOS ===== */}
+<section id="productos" className="py-24 bg-white">
+  <div className="max-w-7xl mx-auto px-4">
+
+    <h2 className="text-4xl font-bold text-center text-[#003E73] mb-12">
+      Soluciones de filtración
+    </h2>
+
+    <ProductsCarousel />
+
+  </div>
+</section>
+
 
           {/* Floating Elements */}
           <motion.div
