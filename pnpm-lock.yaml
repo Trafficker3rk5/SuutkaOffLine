@@ -203,9 +203,6 @@ importers:
       vaul:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      z-ai-web-dev-sdk:
-        specifier: ^0.0.10
-        version: 0.0.10
       zod:
         specifier: ^4.0.2
         version: 4.2.1
@@ -4373,10 +4370,6 @@ packages:
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-
-  z-ai-web-dev-sdk@0.0.10:
-    resolution: {integrity: sha512-yMcR3tyReJph9aQkU++KLG9g8z904vjnNjmA4V3SMZagvmejuOd/UtlqAjLGJut6k55DxWByhcPfLEzNnzCTlw==}
-    hasBin: true
 
   zod@4.2.1:
     resolution: {integrity: sha512-0wZ1IRqGGhMP76gLqz8EyfBXKk0J2qo2+H3fi4mcUP/KtTocoX08nmIAHl1Z2kJIZbZee8KOpBCSNPRgauucjw==}
@@ -9393,8 +9386,6 @@ snapshots:
       lib0: 0.2.115
 
   yocto-queue@0.1.0: {}
-
-  z-ai-web-dev-sdk@0.0.10: {}
 
   zod@4.2.1: {}
 
