@@ -21,7 +21,7 @@ export default function WhatsappButton() {
         hover:scale-105
         hover:shadow-xl
         transition
-        z-50
+        z-40
       "
     >
       <MessageCircle size={22} />
