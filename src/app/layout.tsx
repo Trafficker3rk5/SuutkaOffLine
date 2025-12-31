@@ -8,11 +8,9 @@ export const metadata: Metadata = {
   keywords: ["Suutka", "filtración de agua", "ósmosis inversa", "purificador de agua", "agua potable", "filtros de agua", "sistemas de filtración", "agua purificada"],
   authors: [{ name: "Suutka" }],
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/logo.svg", type: "image/svg+xml" },
-    ],
+    icon: "/logo.svg",
     apple: "/logo.svg",
+    shortcut: "/logo.svg",
   },
   openGraph: {
     title: "Suutka - Pureza Inteligente en Movimiento",
