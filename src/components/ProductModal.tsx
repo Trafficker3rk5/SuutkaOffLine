@@ -2,8 +2,21 @@
 
 import { motion } from 'framer-motion'
 import { X } from 'lucide-react'
+import Image from 'next/image'
 
-export default function ProductModal({ product, onClose }: any) {
+export interface Product {
+  id: number
+  name: string
+  image: string
+  description: string
+}
+
+interface ProductModalProps {
+  product: Product
+  onClose: () => void
+}
+
+export default function ProductModal({ product, onClose }: ProductModalProps) {
   return (
     <motion.div
       className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4"
@@ -26,11 +39,15 @@ export default function ProductModal({ product, onClose }: any) {
           <X />
         </button>
 
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-56 object-contain mb-6"
-        />
+        <div className="relative w-full h-56 mb-6">
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            className="object-contain"
+            sizes="(max-width: 512px) 100vw, 512px"
+          />
+        </div>
 
         <h2 className="text-3xl font-bold text-[#003E73] mb-4">
           {product.name}
@@ -41,8 +58,9 @@ export default function ProductModal({ product, onClose }: any) {
         </p>
 
         <a
-          href="https://wa.me/5219999999999"
+          href="https://wa.me/52XXXXXXXXXX"
           target="_blank"
+          rel="noopener noreferrer"
           className="block text-center bg-[#00C4CF] text-white font-semibold py-4 rounded-full hover:bg-[#003E73] transition"
         >
           Cotizar por WhatsApp

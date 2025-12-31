@@ -1,9 +1,9 @@
 'use client'
-import WhatsappButton from '../components/WhatsappButton'
-import ContactForm from '../components/ContactForm'
+import WhatsappButton from '@/components/WhatsappButton'
+import ContactForm from '@/components/ContactForm'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Droplets, Shield, Zap, ChevronRight, Waves, Filter, Leaf } from 'lucide-react'
+import { Menu, X, Droplets, Shield, Zap, Waves, Filter, Leaf } from 'lucide-react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import ProductsCarousel from '@/components/ProductsCarousel'
 
@@ -502,7 +502,7 @@ export default function SuutkaLanding() {
           </div>
           
           <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
-            <p>&copy; 2024 Suutka. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Suutka. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>

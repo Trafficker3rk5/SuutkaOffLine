@@ -2,9 +2,10 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import ProductModal from './ProductModal'
+import Image from 'next/image'
+import ProductModal, { type Product } from './ProductModal'
 
-const products = [
+const products: Product[] = [
   {
     id: 1,
     name: 'Filtro Residencial',
@@ -38,7 +39,7 @@ const products = [
 ]
 
 export default function ProductsCarousel() {
-  const [activeProduct, setActiveProduct] = useState<any>(null)
+  const [activeProduct, setActiveProduct] = useState<Product | null>(null)
 
   return (
     <>
@@ -62,11 +63,15 @@ export default function ProductsCarousel() {
                 whileHover={{ scale: 1.05 }}
                 className="bg-white rounded-3xl shadow-xl p-6 text-center"
               >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-48 object-contain mb-4"
-                />
+                <div className="relative w-full h-48 mb-4">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-contain"
+                    sizes="280px"
+                  />
+                </div>
                 <h3 className="text-lg font-bold text-[#003E73]">
                   {product.name}
                 </h3>
