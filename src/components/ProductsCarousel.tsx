@@ -2,37 +2,38 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import Image from 'next/image'
 import ProductModal from './ProductModal'
 
 const products = [
   {
     id: 1,
     name: 'Filtro Residencial',
-    image: '/products/filtro1.png',
+    image: '/products/filtro1.webp',
     description: 'Sistema ideal para hogares con filtración avanzada.',
   },
   {
     id: 2,
     name: 'Carbón Activado',
-    image: '/products/filtro2.png',
+    image: '/products/filtro2.webp',
     description: 'Reduce cloro, olores y mejora el sabor.',
   },
   {
     id: 3,
     name: 'Ósmosis Inversa',
-    image: '/products/filtro3.png',
+    image: '/products/filtro3.webp',
     description: 'Elimina hasta 99.9% de contaminantes.',
   },
   {
     id: 4,
     name: 'Filtro Industrial',
-    image: '/products/filtro4.png',
+    image: '/products/filtro4.webp',
     description: 'Alto flujo para negocios e industria.',
   },
   {
     id: 5,
     name: 'Filtro Bajo Tarja',
-    image: '/products/filtro5.png',
+    image: '/products/filtro5.webp',
     description: 'Compacto, discreto y potente.',
   },
 ]
@@ -62,11 +63,16 @@ export default function ProductsCarousel() {
                 whileHover={{ scale: 1.05 }}
                 className="bg-white rounded-3xl shadow-xl p-6 text-center"
               >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-48 object-contain mb-4"
-                />
+                <div className="relative w-full h-48 mb-4">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    sizes="280px"
+                    className="object-contain"
+                    loading="lazy"
+                  />
+                </div>
                 <h3 className="text-lg font-bold text-[#003E73]">
                   {product.name}
                 </h3>

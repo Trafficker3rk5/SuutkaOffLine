@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { X } from 'lucide-react'
+import Image from 'next/image'
 
 export default function ProductModal({ product, onClose }: any) {
   return (
@@ -26,11 +27,16 @@ export default function ProductModal({ product, onClose }: any) {
           <X />
         </button>
 
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-56 object-contain mb-6"
-        />
+        <div className="relative w-full h-56 mb-6">
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            sizes="(max-width: 768px) 100vw, 500px"
+            className="object-contain"
+            priority
+          />
+        </div>
 
         <h2 className="text-3xl font-bold text-[#003E73] mb-4">
           {product.name}

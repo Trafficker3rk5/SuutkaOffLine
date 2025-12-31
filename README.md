@@ -1,110 +1,120 @@
-## Technology Stack
+# Suutka - Pureza Inteligente en Movimiento
 
+Landing page para Suutka, empresa líder en sistemas de filtración de agua con tecnología de ósmosis inversa.
 
-###  Core Framework
-- ** Next.js 15** - The React framework for production with App Router
-- ** TypeScript 5** - Type-safe JavaScript for better developer experience
-- ** Tailwind CSS 4** - Utility-first CSS framework for rapid UI development
+## 🚀 Tecnologías Principales
 
-###  UI Components & Styling
-- ** shadcn/ui** - High-quality, accessible components built on Radix UI
-- ** Lucide React** - Beautiful & consistent icon library
-- ** Framer Motion** - Production-ready motion library for React
-- ** Next Themes** - Perfect dark mode in 2 lines of code
+- **Next.js 16** - Framework React de producción
+- **React 19** - Librería UI moderna
+- **TypeScript 5** - Type-safe JavaScript
+- **Tailwind CSS 4** - Framework CSS utility-first
 
-###  Forms & Validation
-- ** React Hook Form** - Performant forms with easy validation
-- ** Zod** - TypeScript-first schema validation
+- **Framer Motion 12** - Animaciones fluidas
+- **Resend** - Envío de emails transaccionales
+- **Sharp** - Optimización de imágenes
 
-###  State Management & Data Fetching
-- ** Zustand** - Simple, scalable state management
-- ** TanStack Query** - Powerful data synchronization for React
-- ** Fetch** - Promise-based HTTP request
+## 📋 Características
 
-###  Database & Backend
-- ** Prisma** - Next-generation TypeScript ORM
-- ** NextAuth.js** - Complete open-source authentication solution
+✅ Diseño responsive y mobile-first
+✅ Imágenes optimizadas en formato WebP
+✅ Formulario de contacto funcional con envío de emails
+✅ Carrusel de productos animado
+✅ SEO optimizado
+✅ Performance optimizado para carga rápida
+✅ Botón flotante de WhatsApp
 
-###  Advanced UI Features
-- ** TanStack Table** - Headless UI for building tables and datagrids
-- ** DND Kit** - Modern drag and drop toolkit for React
-- ** Recharts** - Redefined chart library built with React and D3
-- ** Sharp** - High performance image processing
-
-###  Internationalization & Utilities
-- ** Next Intl** - Internationalization library for Next.js
-- ** Date-fns** - Modern JavaScript date utility library
-- ** ReactUse** - Collection of essential React hooks for modern development
-
-##  Why This Scaffold?
-- ** Fast Development** - Pre-configured tooling and best practices
-- ** Beautiful UI** - Complete shadcn/ui component library with advanced interactions
-- ** Type Safety** - Full TypeScript configuration with Zod validation
-- ** Responsive** - Mobile-first design principles with smooth animations
-- ** Database Ready** - Prisma ORM configured for rapid backend development
-- ** Auth Included** - NextAuth.js for secure authentication flows
-- ** Data Visualization** - Charts, tables, and drag-and-drop functionality
-- ** i18n Ready** - Multi-language support with Next Intl
-- ** Production Ready** - Optimized build and deployment settings
-- ** AI-Friendly** - Structured codebase perfect for AI assistance
-
-##  Quick Start
+## 🛠️ Instalación
 
 ```bash
-# Install dependencies
-bun install
+# Instalar dependencias
+pnpm install
 
-# Start development server
-bun run dev
-
-# Build for production
-bun run build
-
-# Start production server
-bun start
+# Configurar variables de entorno
+cp .env.example .env.local
 ```
 
-## 📁 Project Structure
+## 🔑 Configuración de Variables de Entorno
 
-```
-src/
-├── app/                 # Next.js App Router pages
-├── components/          # Reusable React components
-│   └── ui/             # shadcn/ui components
-├── hooks/              # Custom React hooks
-└── lib/                # Utility functions and configurations
+Edita el archivo `.env.local` y agrega tu API key de Resend:
+
+```env
+RESEND_API_KEY=re_tu_api_key_aqui
 ```
 
-## Available Features & Components
+### Obtener API Key de Resend
 
-This scaffold includes a comprehensive set of modern web development tools:
+1. Visita [https://resend.com](https://resend.com)
+2. Crea una cuenta gratuita
+3. Ve a **API Keys** en el dashboard
+4. Crea una nueva API key
+5. Cópiala en tu archivo `.env.local`
 
-### UI Components (shadcn/ui)
-- **Layout**: Card, Separator, Aspect Ratio, Resizable Panels
-- **Forms**: Input, Textarea, Select, Checkbox, Radio Group, Switch
-- **Feedback**: Alert, Toast (Sonner), Progress, Skeleton
-- **Navigation**: Breadcrumb, Menubar, Navigation Menu, Pagination
-- **Overlay**: Dialog, Sheet, Popover, Tooltip, Hover Card
-- **Data Display**: Badge, Avatar, Calendar
+## 🚀 Desarrollo
 
-###  Advanced Data Features
-- **Tables**: Powerful data tables with sorting, filtering, pagination (TanStack Table)
-- **Charts**: Beautiful visualizations with Recharts
-- **Forms**: Type-safe forms with React Hook Form + Zod validation
+```bash
+# Ejecutar servidor de desarrollo
+pnpm dev
 
-###  Interactive Features
-- **Animations**: Smooth micro-interactions with Framer Motion
-- **Drag & Drop**: Modern drag-and-drop functionality with DND Kit
-- **Theme Switching**: Built-in dark/light mode support
+# Abrir en el navegador
+# http://localhost:3000
+```
 
-###  Backend Integration
-- **Authentication**: Ready-to-use auth flows with NextAuth.js
-- **Database**: Type-safe database operations with Prisma
-- **API Client**: HTTP requests with Fetch + TanStack Query
-- **State Management**: Simple and scalable with Zustand
+## 📦 Build para Producción
 
-###  Production Features
-- **Internationalization**: Multi-language support with Next Intl
-- **Image Optimization**: Automatic image processing with Sharp
-- **Type Safety**: End-to-end TypeScript with Zod validation
-- **Essential Hooks**: 100+ useful React hooks with ReactUse for common patterns
+```bash
+# Crear build optimizado
+pnpm build
+
+# Ejecutar build de producción
+pnpm start
+```
+
+## 📧 Configuración del Formulario de Contacto
+
+El formulario envía emails a: `contacto@trafficker.com.mx`
+
+Para cambiar el destinatario, edita:
+```
+src/app/api/contact/route.ts
+```
+
+Y modifica la línea:
+```typescript
+to: ['tu-email@ejemplo.com'],
+```
+
+## 🖼️ Optimización de Imágenes
+
+Las imágenes de productos están optimizadas en formato WebP con una reducción de ~90% en tamaño.
+
+Para optimizar nuevas imágenes:
+
+```bash
+# Agregar imágenes a public/products/
+# Ejecutar script de optimización
+node scripts/optimize-images.js
+```
+
+## 📱 Mobile-First
+
+El sitio está optimizado para móviles con:
+- Diseño responsive
+- Imágenes adaptativas
+- Navegación móvil con menú hamburguesa
+- Touch-friendly interactions
+
+## 📊 Performance
+
+- ✅ Imágenes en formato WebP (90% más pequeñas)
+- ✅ Lazy loading de imágenes
+- ✅ Compresión habilitada
+- ✅ Headers de caché configurados
+- ✅ Fonts optimizados
+
+## 📞 Contacto
+
+Para soporte técnico, contactar a: contacto@trafficker.com.mx
+
+## 📄 Licencia
+
+© 2026 Suutka. Todos los derechos reservados

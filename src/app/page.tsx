@@ -502,7 +502,7 @@ export default function SuutkaLanding() {
           </div>
           
           <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
-            <p>&copy; 2024 Suutka. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Suutka. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
