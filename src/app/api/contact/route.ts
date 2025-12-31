@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     // Enviar email usando Resend
     const data = await resend.emails.send({
       from: 'Suutka Contact Form <onboarding@resend.dev>',
-      to: ['contacto@trafficker.com.mx'],
+      to: ['david@trafficker.com.mx'],
       replyTo: email,
       subject: `Nuevo contacto de ${nombre}`,
       html: `

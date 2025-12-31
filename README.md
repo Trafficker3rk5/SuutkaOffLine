@@ -71,7 +71,7 @@ pnpm start
 
 ## 📧 Configuración del Formulario de Contacto
 
-El formulario envía emails a: `contacto@trafficker.com.mx`
+El formulario envía emails a: `david@trafficker.com.mx`
 
 Para cambiar el destinatario, edita:
 ```
@@ -113,7 +113,7 @@ El sitio está optimizado para móviles con:
 
 ## 📞 Contacto
 
-Para soporte técnico, contactar a: contacto@trafficker.com.mx
+Para soporte técnico, contactar a: david@trafficker.com.mx
 
 ## 📄 Licencia
 
