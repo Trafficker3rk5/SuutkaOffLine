@@ -35,6 +35,14 @@ cp .env.example .env.local
 
 ## 🔑 Configuración de Variables de Entorno
 
+### ⚠️ IMPORTANTE: Configuración en Vercel
+
+Si tu proyecto está desplegado en Vercel, **debes** configurar la variable de entorno en el dashboard de Vercel.
+
+**👉 [Ver guía completa de configuración en Vercel](./VERCEL_SETUP.md)**
+
+### Para Desarrollo Local
+
 Edita el archivo `.env.local` y agrega tu API key de Resend:
 
 ```env
@@ -47,7 +55,8 @@ RESEND_API_KEY=re_tu_api_key_aqui
 2. Crea una cuenta gratuita
 3. Ve a **API Keys** en el dashboard
 4. Crea una nueva API key
-5. Cópiala en tu archivo `.env.local`
+5. Para Vercel: Sigue la [guía de configuración](./VERCEL_SETUP.md)
+6. Para local: Cópiala en tu archivo `.env.local`
 
 ## 🚀 Desarrollo
 
