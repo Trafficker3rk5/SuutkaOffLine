@@ -14,16 +14,50 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validar variables de entorno SMTP
+    const requiredEnvVars = ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'SMTP_FROM', 'SMTP_TO'];
+    const missingVars = requiredEnvVars.filter(varName => !process.env[varName]);
+
+    if (missingVars.length > 0) {
+      console.error('Variables SMTP faltantes:', missingVars);
+      return NextResponse.json(
+        { error: 'Configuración de correo incompleta. Contacta al administrador.' },
+        { status: 500 }
+      );
+    }
+
+    const smtpPort = parseInt(process.env.SMTP_PORT || '587');
+    const isSecure = process.env.SMTP_SECURE === 'true';
+
+    console.log('Configuración SMTP:', {
+      host: process.env.SMTP_HOST,
+      port: smtpPort,
+      secure: isSecure,
+      user: process.env.SMTP_USER,
+    });
+
     // Configurar transporter con SMTP
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT || '587'),
-      secure: process.env.SMTP_SECURE === 'true', // true para puerto 465, false para otros
+      port: smtpPort,
+      secure: isSecure, // true para puerto 465 (SSL), false para 587 (TLS)
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      tls: {
+        // No fallar en certificados autofirmados o no válidos
+        rejectUnauthorized: false,
+        minVersion: 'TLSv1.2',
+      },
+      debug: true, // Habilitar logging detallado
+      logger: true, // Habilitar logger
     });
+
+    // Verificar conexión SMTP antes de enviar
+    console.log('Verificando conexión SMTP...');
+    await transporter.verify();
+    console.log('Conexión SMTP verificada exitosamente');
 
     // Configurar el email
     const mailOptions = {
@@ -67,16 +101,28 @@ ${message}
     };
 
     // Enviar el email
-    await transporter.sendMail(mailOptions);
+    console.log('Enviando email...');
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email enviado exitosamente:', info.messageId);
 
     return NextResponse.json(
       { message: 'Email enviado correctamente' },
       { status: 200 }
     );
-  } catch (error) {
-    console.error('Error al enviar email:', error);
+  } catch (error: any) {
+    console.error('Error detallado al enviar email:', {
+      message: error.message,
+      code: error.code,
+      command: error.command,
+      response: error.response,
+      stack: error.stack,
+    });
+
     return NextResponse.json(
-      { error: 'Error al enviar el mensaje. Por favor intenta de nuevo.' },
+      {
+        error: 'Error al enviar el mensaje. Por favor intenta de nuevo.',
+        details: process.env.NODE_ENV === 'development' ? error.message : undefined
+      },
       { status: 500 }
     );
   }
