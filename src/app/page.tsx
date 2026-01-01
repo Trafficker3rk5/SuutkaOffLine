@@ -405,7 +405,7 @@ export default function SuutkaLanding() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#003E73] to-[#00C4CF] relative overflow-hidden">
+      <section className="pt-28 md:pt-36 pb-20 bg-gradient-to-r from-[#003E73] to-[#00C4CF] relative overflow-hidden">
         <div className="absolute inset-0">
           <motion.div
             className="absolute inset-0 opacity-10"
